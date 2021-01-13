@@ -1,0 +1,440 @@
+@import "~bootstrap/scss/bootstrap";
+
+:root {
+	--text-color: #5e5e5e;
+	--subtext-color: #919191;
+	--header-color: #444444;
+	--alt-text-color: #fff;
+	--alt-text-subcolor: #DBDBDB;
+	--link-color: #43BAF8;
+	--footer-color: #525252;
+	--subfooter-color: #707070;
+}
+
+h1 {
+	font-size: 36px;
+	color: var(--header-color);
+}
+
+h2 {
+	font-size: 32px;
+	color: var(--header-color);
+}
+
+h3 {
+	font-size: 28px;
+	color: var(--text-color);
+}
+
+.block {
+	display: block;
+}
+
+main {
+	color: var(--text-color);
+	display: flex;
+}
+
+b {
+	font-weight: 600;
+}
+
+#year-of-study-span {
+	margin-left: 20px;
+	word-break: keep-all;
+	white-space: nowrap;
+}
+
+#userinput-area-div {
+	width: 70%
+}
+
+#userinput-area-content-div {
+	border-top: solid 4px #dbdbdb;
+	margin: 0 auto;
+	min-width: 50vw;
+	margin-left: 4vw;
+	margin-right: 4vw;
+}
+
+#submit-area-div {
+	width: 30%;
+	height: 100vh;
+	position: fixed;
+	padding-top: 15px;
+	background-color: var(--footer-color);
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	right: 0;
+}
+
+#submit-area-div-div {
+	margin: auto;
+}
+
+#total-span {
+	font-size: 36px;
+	font-weight: 600;
+}
+
+#user-speciality-and-course-div {
+	display: flex;
+	align-content: center;
+	justify-content: space-between;
+	color: var(--subtext-color);
+	font-size: 1.2em;
+}
+.user-subinfo {
+	font-weight: 300;
+}
+.user-subinfo>b {
+	font-weight: 500;
+}
+
+#userinput-area-header-div {
+	grid-area: userinput-area-header;
+	text-align: center;
+	padding: 1% 15% 1% 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#userinput-area-welcome-div {
+	grid-area: userinput-area-welcome;
+	border-bottom: solid 4px #dbdbdb;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#userinput-area-courses {
+	grid-area: userinput-area-courses;
+}
+
+#userinput-area-compulsory-courses-div {
+	grid-area: compulsory-courses;
+}
+
+#userinput-area-optional-courses-div {
+	grid-area: optional-courses;
+	margin-bottom: 50px;
+}
+
+.course-type-div {
+	padding-top: 15px;
+}
+
+.courses-div {
+	padding-left: 10px;
+	display: grid;
+	grid-row-gap: 5px;
+}
+
+#editable-select {
+	margin-top: 11px;
+	width: 300px;
+}
+
+#compulsory-courses-div {
+	grid-template-columns: max-content auto;
+}
+
+#optional-courses-div {
+	align-items: center;
+	grid-template-columns: max-content 75px 75px 35px;
+}
+
+.course-name {
+	display: flex;
+	align-items: center;
+}
+
+.course-name-span {
+	font-size: 1.2em;
+	max-width: 70vw;
+	min-width: 200px;
+}
+
+.course-grade {
+	text-align: center;
+	width: 65px;
+	padding: 0px;
+	margin-left: 10px;
+}
+
+.remove-btn {
+	margin-left: 10px;
+	height: 20px;
+	width: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	position: relative;
+}
+.remove-btn::before {
+	display: block;
+	content: "";
+	position: absolute;
+	background-color: var(--subtext-color);
+	width: 100%;
+	height: 2px;
+	transform: rotate(45deg);
+}
+.remove-btn::after {
+	display: block;
+	content: "";
+	position: absolute;
+	background-color: var(--subtext-color);
+	width: 100%;
+	height: 2px;
+	transform: rotate(-45deg);
+}
+.remove-btn:hover::before {
+	background-color: var(--text-color);
+}
+.remove-btn:hover::after {
+	background-color: var(--text-color);
+}
+
+.confirm-eval-btn {
+	margin-top: 10px;
+	color: var(--alt-text-color);
+	background-color: var(--subfooter-color);
+	border-radius: 16px;
+	font-size: 24px;
+	font-weight: 600;
+	padding: 2px 20px;
+	border: 3px solid white;
+	text-decoration: none;
+}
+#confirm-eval-btn:active {
+	filter: brightness(90%);
+}
+
+#submit-area-el {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.select {
+	min-width: 200px;
+}
+
+.grading-stat {
+	font-size: 24px;
+	line-height: 1.5em;
+}
+
+#grading-disclaimer-div {
+	max-width: 280px;
+	font-size: 14px;
+	font-weight: 300;
+	color: var(--alt-text-subcolor);
+}
+
+#footer-div {
+	position: absolute;
+	bottom: 20px;
+	display: grid;
+	grid-template-areas: "exit-btn" "footer-msg";
+}
+
+#footer-span {
+	color: var(--alt-text-subcolor);
+	font-weight: 300;
+	font-size: 16px;
+	text-align: center;
+}
+
+#logout-a {
+	color: var(--link-color);
+	font-size: 24px;
+	font-weight: 600;
+}
+#logout-a:hover {
+	text-decoration: none;
+}
+
+#logout-div {
+	text-align: center;
+}
+
+.flex-center-align-container {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+#logout-div {
+	grid-area: "exit-btn";
+}
+
+#footer-text-div {
+	grid-area: "footer-msg";
+}
+
+@media only screen and (max-width: 1125px) {
+	#service-name-span {
+		font-size: 1.9em;
+	}
+
+	#user-welcome-span {
+		font-size: 1.9em;
+	}
+}
+
+@media only screen and (max-width: 982px) {
+	#service-name-span {
+		font-size: 1.6em;
+	}
+
+	#user-welcome-span {
+		font-size: 1.6em;
+	}
+}
+
+/* Should switch to mobile-like layout */
+@media only screen and (max-width: 945px) {
+	main {
+		flex-direction: column;
+	}
+
+	#submit-area-div {
+		width: 100%;
+		height: initial;
+		padding-top: 15px;
+		display: grid;
+		grid-template-areas: "submit-area-content-mob" "submit-area-footer-mob";
+		grid-gap: 20px;
+		position: static;
+	}
+
+	#userinput-area-div {
+		width: 100%;
+	}
+
+	#submit-area-div-div {
+		grid-area: submit-area-content-mob;
+	}
+
+	#footer-div {
+		position: relative;
+		bottom: 0;
+		grid-area: submit-area-footer-mob;
+		margin-top: 45px;
+	}
+}
+
+@media only screen and (max-width: 625px) {
+
+	.grading-stat {
+		font-size: 18px;
+	}
+
+	#userinput-area-div {
+		grid-template-rows: 90px auto;
+	}
+
+	#service-name-span {
+		font-size: 1.6em;
+	}
+
+	#user-welcome-span {
+		font-size: 1.3em;
+	}
+
+	#user-speciality-and-course-div {
+		font-size: 1em;
+	}
+
+	.course-type-div {
+		font-size: 1.2em;
+	}
+
+	.course-name-span {
+		font-size: 1em;
+	}
+}
+
+@media only screen and (max-width: 540px) {
+	#service-name-span {
+		font-size: 1.4em;
+	}
+
+	#editable-select {
+		width: 200px;
+		font-size: 0.9em;
+	}
+
+	#total-span {
+		font-size: 32px;
+	}
+
+	#submit-area-el {
+		font-size: 0.9em;
+	}
+
+	#grading-disclaimer-div {
+		font-size: 12px;
+	}
+
+}
+
+@media only screen and (max-width: 470px) {
+	#userinput-area-header-div {
+		padding: 3px 15px 3px 15px;
+	}
+
+	#service-name-span {
+		font-size: 1.3em;
+	}
+
+	.course-grade {
+		font-size: 0.8em;
+	}
+
+	#remove-btn {
+		padding: 0;
+		height: 32px;
+		width: 32px;
+	}
+}
+
+@media only screen and (max-width: 405px) {
+	#service-name-span {
+		font-size: 1.2em;
+	}
+
+	#user-welcome-span {
+		font-size: 1.2em;
+	}
+
+	#editable-select {
+		width: 150px;
+		font-size: 0.8em;
+		margin-top: 13.5px;
+	}
+
+	#user-speciality-and-course-div {
+		font-size: 0.9em;
+	}
+
+	.course-type-div {
+		font-size: 1em;
+	}
+
+	.course-name-span {
+		font-size: 0.8em;
+	}
+
+	.course-grade {
+		font-size: 0.8em;
+		// width: 35px;
+	}
+
+}
