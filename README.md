@@ -1,4 +1,4 @@
-# Grades-Rating-NaUKMA
+# Grades-Rating
 
 ### Hey fellow dev. Wanna checkout new hot projects near you. Than find another one
 This is just two dudes messin' with JS (one of whom prefers writing TS tho)
