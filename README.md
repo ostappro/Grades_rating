@@ -1,8 +1,5 @@
 # Grades-Rating
 
-### Hey fellow dev. Wanna checkout new hot projects near you. Than find another one
-This is just two dudes messin' with JS (one of whom prefers writing TS tho)
-
 ### If ya still wanna build this thing then follow this steps:
 - `git clone <project-url>` - duh.
 - `npm install` or `yarn install` - whatever suits you best <3
