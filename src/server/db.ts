@@ -1,5 +1,8 @@
 import { User, UserResults } from "../shared/components"
 import { UserModel } from "./models/user"
+import { PrismaClient } from "@prisma/client"
+
+export const backupDB = new PrismaClient({ log: ["info", "warn", "query"]})
 
 /**
  * Puts or updates existing user in db with one provided
@@ -12,6 +15,7 @@ import { UserModel } from "./models/user"
 export async function putGrade(user: User) {
     const weightedSum = user.grades.reduce((acc, cur) => acc + cur.credits * cur.grade, 0)
     const creditsSum = user.grades.reduce((acc, cur) => acc + cur.credits, 0)
+    // await backupPutGrade(user)
     let oldUser = await UserModel.findOne({ id: user.id })
     if (oldUser) {
         Object.assign(oldUser, { grades: user.grades, weighted: weightedSum / creditsSum })
@@ -23,6 +27,29 @@ export async function putGrade(user: User) {
         })
         return model.save()
     }
+}
+
+const backupPutGrade = ({ name, grades }: User) => {
+    return backupDB.user.upsert({
+        create: {
+            name,
+            grades: {
+                create: grades,
+            },
+        },
+        update: {
+            name,
+            grades: {
+                create: grades,
+            },
+        },
+        where: {
+            name,
+        },
+    }).then(u => {
+        console.log(u)
+        return u
+    })
 }
 
 /**

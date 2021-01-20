@@ -47,7 +47,7 @@ const requestEvaluation = debounce(
     ), 500)
 
 ReactDOM.render(
-    withStore(store, WelcomeBanner, { specialty: "Інженерія програмного забезпечення", course: "2-Б" }),
+    withStore(store, WelcomeBanner, { specialty: "126", course: "3" }),
     document.getElementById("userinput-area-welcome-div"))
 ReactDOM.render(
     withStore(store, CompulsoryCourses, {}),

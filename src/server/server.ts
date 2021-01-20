@@ -5,10 +5,11 @@ import mongoose from "mongoose";
 import evaluate from "./api/evaluate";
 import put from "./api/put";
 import user from "./api/user";
+import { backupDB } from "./db"
 import { wrapAPI } from "./util";
 dotenv.config();
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
 const url = process.env.MONGO_URL
 const dbName = process.env.DBNAME
 
@@ -18,8 +19,8 @@ const dbName = process.env.DBNAME
  * 
  */
 export function init() {
-    return mongoose.connect(url!, { useNewUrlParser: true, useUnifiedTopology: true })
-        .then(connection => {
+    return Promise.all([mongoose.connect(url!, { useNewUrlParser: true, useUnifiedTopology: true }), backupDB.$connect()])
+        .then(([connection]) => {
             const app = express()
             app.use(express.static(`${__dirname}/../app/`))
             app.use(bodyparser.json())
